@@ -12,7 +12,7 @@ A fork of jQuery-columnlist to do more what I want it to do. See codepen for an 
 ## Example
 
 ```javascript
-    $('div.column-divst-js').columndivst({
+    $('div.list').columnlist({
         numberOfColumns: 2
         class: 'column-list',
         incrementClass: 'column-list-',
@@ -24,7 +24,7 @@ A fork of jQuery-columnlist to do more what I want it to do. See codepen for an 
 Turns this...
 
 ```html
-    <div class="column-divst-js">
+    <div class="list">
         <div>Item #1</div>
         <div>Item #2</div>
         <div>Item #3</div>
@@ -39,7 +39,7 @@ Turns this...
 Into this...
 
 ```html
-    <div class="column-divst-js">
+    <div class="list">
         <div class="column-list column-list-1">
             <div>Item #1</div>
             <div>Item #2</div>
