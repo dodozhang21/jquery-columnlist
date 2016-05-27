@@ -1,0 +1,12 @@
+{
+  "name": "jQuery-columnlist",
+  "version": "1.0.0",
+  "main": [
+    "src/jquery.columnlist.js"
+  ],
+  "description": "Splits list of items into columns",
+  "license": "WebLinc LLC",
+  "dependencies": {
+    "jquery": ">= 2.0"
+  }
+}

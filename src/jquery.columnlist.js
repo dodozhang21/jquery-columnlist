@@ -1,36 +1,47 @@
 // jquery.columnlist.js
 // @weblinc, @jsantell (c) 2012
+// @dodozhang21 modified in 2016
 
-;(function( $ ) {
-    $.fn.columnlist = function ( options ) {
-        options = $.extend( {}, $.fn.columnlist.defaults, options );
+;(function ($) {
+    $.fn.columnlist = function (options) {
+        options = $.extend({}, $.fn.columnlist.defaults, options);
 
         return this.each(function () {
             var
-              $list     = $( this ),
-              size      = options.size || $list.data( 'columnList' ) || 1,
-              $children = $list.children( 'li' ),
-              perColumn = Math.ceil( $children.length / size ),
-              $column;
-            for (var i = 0; i < size; i++) {
-                $column = $('<ul />').appendTo( returnColumn( i ) );
-                for ( var j = 0; j < perColumn; j++ ) {
-                    if ( $children.length > i * perColumn + j ) {
-                        $column.append( $children[ i * perColumn + j ]);
-                    }
+              $list = $(this),
+              numberOfColumns = options.numberOfColumns,
+              $children = $list.find(options.itemClass),
+              perColumn = Math.ceil($children.length / numberOfColumns),
+              $column,
+              columns = [];
+            for (var i = 0; i < numberOfColumns; i++) {
+                var k = i + 1;
+                $column = returnColumn(k);
+                for (var j = i * perColumn; j < i * perColumn + perColumn; j++) {
+                    var $child = $children.eq(j);
+                    $column.append($child);
                 }
-                $list.append( $column.parent() );
+                columns.push($column);
+            }
+
+            $list = $list.empty();
+            for (var o in columns) {
+                var $column = columns[o];
+                $list.append($column);
             }
         });
 
-        function returnColumn ( inc ) {
-            return $('<li class="' + options.incrementClass + inc + ' ' + options[ 'class' ] + '"></li>');
+        function returnColumn(inc) {
+            return $('<' + options.columnTag + ' class="' + options.incrementClass + inc + ' ' + options.class + '"/>');
         }
     };
 
     $.fn.columnlist.defaults = {
-        'class'        : 'column-list',
-        incrementClass : 'column-list-'
+        class: 'column-list',
+        incrementClass: 'column-list-',
+        itemClass: '.item',
+        columnTag: 'div',
+        numberOfColumns: 2
     };
 
-})( jQuery );
+})(jQuery);
