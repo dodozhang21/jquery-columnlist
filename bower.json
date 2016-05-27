@@ -4,6 +4,9 @@
   "main": [
     "src/jquery.columnlist.js"
   ],
+  "ignore": [
+    "src/*"
+  ],
   "description": "Splits list of items into columns",
   "license": "WebLinc LLC",
   "dependencies": {
