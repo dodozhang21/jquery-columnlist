@@ -5,7 +5,7 @@
     "src/jquery.columnlist.js"
   ],
   "ignore": [
-    "src/*"
+    "src/**/.*"
   ],
   "description": "Splits list of items into columns",
   "license": "WebLinc LLC",
