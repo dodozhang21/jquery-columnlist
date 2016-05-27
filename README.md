@@ -1,6 +1,6 @@
 # jquery-columnlist
 
-A fork of jQuery-columnlist to do more what I want it to do. [See codepen for an example|http://codepen.io/dodozhang21/pen/EyYMpy?]
+A fork of jQuery-columnlist to do more what I want it to do. See codepen for an example http://codepen.io/dodozhang21/pen/EyYMpy.
 
 ## Options
 * `numberOfColumns`: How many columns to spdivt the UL into. If left blank, will check the UL's `data-column-divst` attribute.
