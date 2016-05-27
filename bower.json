@@ -1,6 +1,9 @@
 {
   "name": "jQuery-columnlist",
   "version": "1.0.0",
+  "main": [
+    "src/jquery.columnlist.js"
+  ],
   "description": "Splits list of items into columns",
   "dependencies": {
     "jquery": ">= 2.0"
